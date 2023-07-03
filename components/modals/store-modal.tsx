@@ -1,8 +1,11 @@
 "use client";
 
 import * as z from "zod";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 import { useStoreModal } from "@/hooks/use-store-modal";
 import { Modal } from "@/components/ui/modal";
@@ -23,6 +26,7 @@ const formSchema = z.object({
 
 export const StoreModal = () => {
   const storeModal = useStoreModal();
+  const [loading, setLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -32,8 +36,15 @@ export const StoreModal = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    //TODO: create Store
+    try {
+      setLoading(true);
+      const response = await axios.post("/api/stores", values);
+      toast.success("Mağaza oluştu");
+    } catch (error) {
+      toast.error("bir şey yanlış oldu");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -56,7 +67,11 @@ export const StoreModal = () => {
                   <FormItem>
                     <FormLabel>Adı</FormLabel>
                     <FormControl>
-                      <Input placeholder=" E-Ticaret " {...field} />
+                      <Input
+                        disabled={loading}
+                        placeholder=" E-Ticaret "
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -66,7 +81,9 @@ export const StoreModal = () => {
                 <Button variant="outline" onClick={storeModal.onClose}>
                   Geri Git
                 </Button>
-                <Button type="submit">Devam Et</Button>
+                <Button disabled={loading} type="submit">
+                  Devam Et
+                </Button>
               </div>
             </form>
           </Form>

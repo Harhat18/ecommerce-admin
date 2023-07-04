@@ -55,7 +55,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
       setLoading(true);
       await axios.patch(`/api/stores/${params.storeId}`, data);
       router.refresh();
-      toast.success("Mağaza Güncellendi.");
+      toast.success("Mağaza Güncellendi...");
     } catch (error: any) {
       toast.error("Birkaç hata var.");
     } finally {

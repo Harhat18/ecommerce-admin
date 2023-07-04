@@ -19,39 +19,39 @@ export function MainNav({
       active: pathname === `/${params.storeId}`,
     },
     {
-      href: `/${params.storeId}/panolar`,
+      href: `/${params.storeId}/billboards`,
       label: "Panolar",
-      active: pathname === `/${params.storeId}/panolar`,
+      active: pathname === `/${params.storeId}/billboards`,
     },
     {
-      href: `/${params.storeId}/kategoriler`,
+      href: `/${params.storeId}/categories`,
       label: "Kategoriler",
-      active: pathname === `/${params.storeId}/kategoriler`,
+      active: pathname === `/${params.storeId}/categories`,
     },
     {
-      href: `/${params.storeId}/boyutlar`,
+      href: `/${params.storeId}/sizes`,
       label: "Boyutlar",
-      active: pathname === `/${params.storeId}/boyutlar`,
+      active: pathname === `/${params.storeId}/sizes`,
     },
     {
-      href: `/${params.storeId}/renkler`,
+      href: `/${params.storeId}/colors`,
       label: "Renkler",
-      active: pathname === `/${params.storeId}/renkler`,
+      active: pathname === `/${params.storeId}/colors`,
     },
     {
-      href: `/${params.storeId}/urunler`,
+      href: `/${params.storeId}/products`,
       label: "Ürünler",
-      active: pathname === `/${params.storeId}/urunler`,
+      active: pathname === `/${params.storeId}/products`,
     },
     {
-      href: `/${params.storeId}/siparisler`,
+      href: `/${params.storeId}/orders`,
       label: "Siparişler",
-      active: pathname === `/${params.storeId}/siparisler`,
+      active: pathname === `/${params.storeId}/orders`,
     },
     {
-      href: `/${params.storeId}/ayarlar`,
+      href: `/${params.storeId}/settings`,
       label: "Ayarlar",
-      active: pathname === `/${params.storeId}/ayarlar`,
+      active: pathname === `/${params.storeId}/settings`,
     },
   ];
 

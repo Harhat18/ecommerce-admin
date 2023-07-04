@@ -24,17 +24,17 @@ export const BillboardClient: React.FC<BillboardClientProps> = ({ data }) => {
       <div className="flex items-center justify-between">
         <Heading
           title={`Panolar (${data.length})`}
-          description="Mağazanızın reklam panolarını yönetin"
+          description="Mağazanızın panolarını yönetin"
         />
         <Button
           onClick={() => router.push(`/${params.storeId}/billboards/new`)}
         >
-          <Plus className="mr-2 h-4 w-4" /> Add New
+          <Plus className="mr-2 h-4 w-4" /> Yeni Ekle
         </Button>
       </div>
       <Separator />
       <DataTable searchKey="label" columns={columns} data={data} />
-      <Heading title="API" description="Reklam Panoları için API Çağrıları" />
+      <Heading title="API" description="Panolar için API Çağrıları" />
       <Separator />
       <ApiList entityName="billboards" entityIdName="billboardId" />
     </>

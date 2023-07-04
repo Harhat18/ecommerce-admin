@@ -50,7 +50,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
     ? "bir reklam panosunu düzenleyin."
     : "Yeni bir reklam panosu ekle";
   const toastMessage = initialData ? "Pano güncellendi." : "Pano oluşturuludu.";
-  const action = initialData ? "Değişiklik kaydedildi" : "Oluştu";
+  const action = initialData ? "Değişiklik kaydedildi" : "Ekle";
 
   const form = useForm<BillboardFormValues>({
     resolver: zodResolver(formSchema),

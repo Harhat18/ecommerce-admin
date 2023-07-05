@@ -20,7 +20,7 @@ const SizesPage = async ({ params }: { params: { storeId: string } }) => {
     id: item.id,
     name: item.name,
     value: item.value,
-    createdAt: format(item.createdAt, " d MMMM  yyyy", { locale: tr }),
+    createdAt: format(item.createdAt, " d MMMM yyyy", { locale: tr }),
   }));
 
   return (

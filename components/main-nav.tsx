@@ -30,7 +30,7 @@ export function MainNav({
     },
     {
       href: `/${params.storeId}/sizes`,
-      label: "Boyutlar",
+      label: "Bedenler",
       active: pathname === `/${params.storeId}/sizes`,
     },
     {

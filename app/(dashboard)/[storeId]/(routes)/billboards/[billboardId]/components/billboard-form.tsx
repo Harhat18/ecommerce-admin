@@ -47,7 +47,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 
   const title = initialData ? "Panoyu düzenle" : "Pano oluştur";
   const description = initialData
-    ? "bir reklam panosunu düzenleyin."
+    ? "Panoyu düzenleyin."
     : "Yeni bir reklam panosu ekle";
   const toastMessage = initialData ? "Pano güncellendi." : "Pano oluşturuludu.";
   const action = initialData ? "Değişiklik kaydedildi" : "Ekle";

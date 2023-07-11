@@ -45,7 +45,7 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
   const [loading, setLoading] = useState(false);
 
   const title = initialData ? "Renk Düzenle" : "Renk Oluştur";
-  const description = initialData ? "Bir Renk Düzenle" : "Renk Ekle";
+  const description = initialData ? "Bir Renk Düzenle" : "Bir Renk Oluştur";
   const toastMessage = initialData ? "Renk Düzenlendi." : "Renk Eklendi";
   const action = initialData ? "Kaydet" : "Ekle";
 

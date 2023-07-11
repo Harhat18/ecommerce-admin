@@ -10,12 +10,13 @@ interface OrderClientProps {
   data: OrderColumn[];
 }
 
-export const OrderClient: React.FC<OrderClientProps> = ({
-  data
-}) => {
+export const OrderClient: React.FC<OrderClientProps> = ({ data }) => {
   return (
     <>
-      <Heading title={`Siparişler (${data.length})`} description="Siparişleriniz Buradan Yönetin" />
+      <Heading
+        title={`Siparişler (${data.length})`}
+        description="Siparişleriniz yönetin"
+      />
       <Separator />
       <DataTable searchKey="Şiparişler" columns={columns} data={data} />
     </>

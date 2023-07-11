@@ -39,7 +39,7 @@ export const StoreModal = () => {
     try {
       setLoading(true);
       const response = await axios.post("/api/stores", values);
-      toast.success("Mağaza oluştur");
+      toast.success("Mağaza oluştu");
       window.location.assign(`/${response.data.id}`);
     } catch (error) {
       toast.error("bir şey yanlış oldu");
@@ -50,8 +50,8 @@ export const StoreModal = () => {
 
   return (
     <Modal
-      title="oluşan store"
-      description="oluşan store açıklama"
+      title="Mağaza Ekle "
+      description=""
       isOpen={storeModal.isOpen}
       onClose={() => {
         storeModal.onClose;
@@ -66,7 +66,7 @@ export const StoreModal = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Adı</FormLabel>
+                    <FormLabel>Mağaza Adı</FormLabel>
                     <FormControl>
                       <Input
                         disabled={loading}

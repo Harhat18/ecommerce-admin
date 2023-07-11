@@ -70,10 +70,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? "Edit product" : "Create product";
-  const description = initialData ? "Edit a product." : "Add a new product";
-  const toastMessage = initialData ? "Product updated." : "Product created.";
-  const action = initialData ? "Save changes" : "Create";
+  const title = initialData ? "Ürün Düzenle" : "Ürün Ekle";
+  const description = initialData
+    ? "Ürünlerinizi Düzenleyin"
+    : "Yeni Ürünler Ekleyin";
+  const toastMessage = initialData ? "Ürün Güncellendi." : "Ürün Eklendi.";
+  const action = initialData ? "KAydet" : "Ekle";
 
   const defaultValues = initialData
     ? {

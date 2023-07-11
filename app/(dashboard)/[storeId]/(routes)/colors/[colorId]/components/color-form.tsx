@@ -44,10 +44,10 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? "Edit color" : "Create color";
-  const description = initialData ? "Edit a color." : "Add a new color";
-  const toastMessage = initialData ? "Color updated." : "Color created.";
-  const action = initialData ? "Save changes" : "Create";
+  const title = initialData ? "Renk Düzenle" : "Renk Oluştur";
+  const description = initialData ? "Bir Renk Düzenle" : "Renk Ekle";
+  const toastMessage = initialData ? "Renk Düzenlendi." : "Renk Eklendi";
+  const action = initialData ? "Kaydet" : "Ekle";
 
   const form = useForm<ColorFormValues>({
     resolver: zodResolver(formSchema),
@@ -85,7 +85,9 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
       router.push(`/${params.storeId}/colors`);
       toast.success("Renk silindi");
     } catch (error: any) {
-      toast.error("Önce bu rengi kullanan tüm ürünleri çıkardığınızdan emin olun.");
+      toast.error(
+        "Önce bu rengi kullanan tüm ürünleri çıkardığınızdan emin olun."
+      );
     } finally {
       setLoading(false);
       setOpen(false);

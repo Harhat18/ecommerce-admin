@@ -102,7 +102,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       toast.success("Kategori silindi .");
     } catch (error: any) {
       toast.error(
-        "Make sure you removed all products using this category first."
+        "Önce bu kategoriyi kullanan tüm ürünleri kaldırdığınızdan emin olun."
       );
     } finally {
       setLoading(false);

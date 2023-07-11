@@ -34,10 +34,10 @@ export const CellAction: React.FC<CellActionProps> = ({
     try {
       setLoading(true);
       await axios.delete(`/api/${params.storeId}/products/${data.id}`);
-      toast.success('Product deleted.');
+      toast.success('Ürün silindi.');
       router.refresh();
     } catch (error) {
-      toast.error('Something went wrong');
+      toast.error('birşeyler ters gitti');
     } finally {
       setLoading(false);
       setOpen(false);
@@ -46,7 +46,7 @@ export const CellAction: React.FC<CellActionProps> = ({
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
-    toast.success('Product ID copied to clipboard.');
+    toast.success('Ürün ID kopyalandı.');
   }
 
   return (
@@ -65,21 +65,21 @@ export const CellAction: React.FC<CellActionProps> = ({
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuLabel>Actions</DropdownMenuLabel>
+          <DropdownMenuLabel>Menü</DropdownMenuLabel>
           <DropdownMenuItem
             onClick={() => onCopy(data.id)}
           >
-            <Copy className="mr-2 h-4 w-4" /> Copy Id
+            <Copy className="mr-2 h-4 w-4" /> Id kopyala
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => router.push(`/${params.storeId}/products/${data.id}`)}
           >
-            <Edit className="mr-2 h-4 w-4" /> Update
+            <Edit className="mr-2 h-4 w-4" /> Güncelle
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => setOpen(true)}
           >
-            <Trash className="mr-2 h-4 w-4" /> Delete
+            <Trash className="mr-2 h-4 w-4" /> Sil
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

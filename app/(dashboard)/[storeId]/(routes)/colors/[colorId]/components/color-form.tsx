@@ -83,9 +83,9 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
       await axios.delete(`/api/${params.storeId}/colors/${params.colorId}`);
       router.refresh();
       router.push(`/${params.storeId}/colors`);
-      toast.success("Color deleted.");
+      toast.success("Renk silindi");
     } catch (error: any) {
-      toast.error("Make sure you removed all products using this color first.");
+      toast.error("Önce bu rengi kullanan tüm ürünleri çıkardığınızdan emin olun.");
     } finally {
       setLoading(false);
       setOpen(false);
@@ -125,11 +125,11 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Renk Adı</FormLabel>
                   <FormControl>
                     <Input
                       disabled={loading}
-                      placeholder="Color name"
+                      placeholder="Renk Adı"
                       {...field}
                     />
                   </FormControl>
@@ -142,12 +142,12 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
               name="value"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Value</FormLabel>
+                  <FormLabel>Renk Kodu</FormLabel>
                   <FormControl>
                     <div className="flex items-center gap-x-4">
                       <Input
                         disabled={loading}
-                        placeholder="Color value"
+                        placeholder="Renk kodu"
                         {...field}
                       />
                       <div

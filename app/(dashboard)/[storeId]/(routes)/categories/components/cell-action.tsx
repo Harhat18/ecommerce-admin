@@ -33,11 +33,11 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
     try {
       setLoading(true);
       await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
-      toast.success("Category deleted.");
+      toast.success("Renk silindi");
       router.refresh();
     } catch (error) {
       toast.error(
-        "Make sure you removed all products using this category first."
+        "Önce bu rengi kullanan tüm ürünleri çıkardığınızdan emin olun."
       );
     } finally {
       setOpen(false);
